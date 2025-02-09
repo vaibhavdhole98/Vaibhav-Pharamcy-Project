@@ -110,4 +110,10 @@ export class AdminComponent implements OnInit {
       console.error('Delete Product Error:', error);
     }
   }
+
+//To add drugs from Admin
+  addDruges(){
+    console.log("add druges" );
+
+  }
 }

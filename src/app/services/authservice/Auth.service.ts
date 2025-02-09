@@ -7,12 +7,10 @@ export class AuthService {
   usersURL = 'http://localhost:3300/users';
 
   private isLoggedIn = false;
-  private isAdmin = false;
+   private isAdmin = false;
 
 
-  //doctor   and admin
-  // admin >>> pop up send request to supplier and view request from doctor
-  // supplier >>> pop up  view request 
+
 
 
   // private isLoggedIn = true;
