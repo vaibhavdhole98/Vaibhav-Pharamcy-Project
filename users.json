@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "password": "password123",
+      "isadmin": 0
+    },
+    {
+      "id": "2",
+      "username": "jane_doe",
+      "password": "securePass456",
+      "isadmin": 0
+    },
+    {
+      "id": "3",
+      "username": "abdelrahman125",
+      "password": "12345",
+      "isadmin": 1
+    },
+    {
+      "id": "4",
+      "username": "jo1575mo@yahoo.com",
+      "password": "123",
+      "isadmin": 0
+    },
+    {
+      "id": "5",
+      "username": "aboomar",
+      "password": "12345",
+      "isadmin": 0
+    },
+    {
+      "id": "6",
+      "username": "7e7a",
+      "password": "12345",
+      "isadmin": 0
+    },
+    {
+      "id": "7",
+      "username": "bodda",
+      "password": "12345"
+    }
+  ]
+}

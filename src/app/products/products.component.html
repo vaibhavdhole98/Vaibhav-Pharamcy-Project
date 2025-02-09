@@ -1,0 +1,141 @@
+<div class="product-big-title-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product-bit-title text-center">
+          <!-- <h2 *ngIf="router.url.includes('/products'); else bestseller">Supplier</h2>
+          <ng-template #bestseller>
+            <h2>Doctor /Admin</h2>
+          </ng-template> -->
+          <!-- </ng-template> -->
+          <h2 *ngIf="this.authService.isAuthenticated() === true">Supplier</h2>
+
+          <h2 *ngIf="this.authService.isAuthenticated() === false">Doctor /Admin</h2>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <!-- Search Bar -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="single-sidebar">
+        <br>
+        <input type="text" [(ngModel)]="searchQuery" (input)="searchProducts()" placeholder="Search products..."
+          class="search-input" autocomplete="on" />
+      </div>
+    </div>
+
+
+    <!-- Admin Panel Button -->
+    <div class="right-align">
+      <button *ngIf="isAuthenticated()" routerLinkActive="active" style="top: 390px; position: absolute;">
+        <a routerLink="/admin" class="text-white text-decoration-none">Add Drugs</a>
+      </button>
+    </div>
+
+
+    <div class="right-align">
+      <button *ngIf="this.authService.isAuthenticated() === true" (click)="openModal()"
+        style="top: 389px; right: 300px; position: absolute;">
+        <a class="text-white text-decoration-none">View Request </a>
+      </button>
+    </div>
+
+    <div class="right-align">
+      <button *ngIf="this.authService.isAuthenticated() === false" (click)="openModal()"
+        style="top: 389px; right: 300px; position: absolute;">
+        <a class="text-white text-decoration-none">Send Request </a>
+      </button>
+    </div>
+  </div>
+
+  <!-- Large Modal Popup of View Request-->
+  <div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal-large">
+      <div class="modal-header">
+        <h2>View Request Details</h2>
+      </div>
+      <div class="modal-body">
+        <p>this is View Request.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Sed ut purus eget massa placerat ultricies vel ac nisi.
+          Integer id augue id ipsum varius commodo.</p>
+        <p><strong>Status:</strong> Pending</p>
+      </div>
+      <div class="modal-footer">
+        <button (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal-large">
+      <div class="modal-header">
+        <h2>Show Request Details</h2>
+      </div>
+      <div class="modal-body">
+        <p>This is Show Request.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Sed ut purus eget massa placerat ultricies vel ac nisi.
+          Integer id augue id ipsum varius commodo.</p>
+        <p><strong>Status:</strong> Pending</p>
+      </div>
+      <div class="modal-footer">
+        <button (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Product List -->
+  <div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 text-center" *ngFor="let product of filteredProducts;">
+          <div class="single-shop-product">
+            <div class="product-upper">
+              <img [src]="product.photo" alt="{{ product.title }}" class="product" />
+            </div>
+            <h2 class="h2">
+              <a [routerLink]="'/product/' + product.id">{{ product.title }}</a>
+            </h2>
+            <div class="product-carousel-price">
+              <ins>{{ product.Price | currency }}</ins>
+              <del>{{ product.discount | currency }}</del>
+            </div>
+            <div class="product-option-shop">
+              <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow"
+                [routerLink]="'/cart'" (click)="addCartItem(product)">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination (Optional) -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="product-pagination text-center">
+            <nav>
+              <ul class="pagination">
+                <li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                <!-- <li *ngFor="let page of totalPages"><a href="#" (click)="goToPage(page)">{{ page }}</a></li> -->
+                <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
