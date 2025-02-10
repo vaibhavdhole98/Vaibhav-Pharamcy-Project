@@ -1,6 +1,6 @@
 # Angular ECommerce Front End
 
-E-Commerce Front-End website is developed using below Technologies:
+Pharmacy E-Commerce Front-End website is developed using below Technologies:
 
 <ol>
 <li>Angular-17</li>
@@ -25,8 +25,7 @@ The Website enables the user to perform all e- commerce operations:
     <li>Checkout Details Page with paying options and shipping details.</li>
 </ol>
 
-At the moment the User's Profile Page is under construction.
-A Screenshoot Folder is included to view Some Features.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
